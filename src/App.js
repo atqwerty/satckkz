@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import Button from './components/atoms/Button'
+import Input from './components/atoms/Input'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           callback={callback}
         />
       </div>
+      <Input type='button' />
     </div>
   )
 }
