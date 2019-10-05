@@ -29,7 +29,7 @@ const Button = ({
 
   return (
     <ButtonStyled
-      onClick = {() => callback()}
+      onClick={() => callback()}
       buttonColor={buttonColor}
       textColor={buttonTextColor}
       width={buttonWidth}
