@@ -1,26 +1,25 @@
 import React from 'react'
 import './App.css'
-import Button from './components/atoms/Button'
 import Input from './components/atoms/Input'
 
 function App() {
 
-  const callback = () => {
-    alert('nigga')
+  const callback = (value = '') => {
+    alert('callback answer ' + value)
   }
 
   return (
     <div className='App'>
-      <div style={{ width: '20%', height: '10%', position: 'absolute' }}>
-        <Button
-          text='nigger faggot'
-          color='#000000'
-          textColor='#ffffff'
-          width={200}
-          callback={callback}
+      <div style={{ width: '200px', height: '30px', position: 'absolute' }}>
+        <Input
+          type='checkbox'
+          bgColor='orange'
+          containedValue='test'
+          // callback={callback}
+          // componentWidth='100%'
+          // componentHeight='100%'
         />
       </div>
-      <Input type='button' />
     </div>
   )
 }
