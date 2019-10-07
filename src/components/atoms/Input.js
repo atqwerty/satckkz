@@ -8,7 +8,7 @@ const InputStyled = styled.input`
   border-radius: 5px;
   width: ${props => props.width};
   height: ${props => props.height};
-  background-color: ${props => props.backgroundColor};
+  background-image: linear-gradient(${props => props.backgroundColor}, #F87596);
   ${props => props.inputStyles}
 `
 
@@ -19,6 +19,7 @@ const Input = ({
   callback,
   componentWidth,
   componentHeight,
+  placeHolder,
   ...props
 }) => {
   const inputRef = useRef()
@@ -27,6 +28,7 @@ const Input = ({
   const [width] = useState(componentWidth)
   const [height] = useState(componentHeight)
   const [value, setValue] = useState(containedValue)
+  const [placeholder] = useState(placeHolder)
   const [inputStyles, setInputStyles] = useState('')
   const [isTextType, setIsTextType] = useState(false)
 
@@ -43,7 +45,7 @@ const Input = ({
           transition-duration: 0.4s;
 
           &:hover {
-            box-shadow: inset 0 0 0 5px #167070;
+            box-shadow: inset 0 0 0 3px #CE6A85;
           }
           `
         )
@@ -54,6 +56,7 @@ const Input = ({
           `cursor: pointer;
           appearance: none;
           background-color: #DCDCDC;
+          background-image: none;
           border: 1px solid black;
           box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
           border-radius: 2px;
@@ -65,7 +68,7 @@ const Input = ({
           }
 
           &:checked {
-            background-color: orange;
+            background-image: linear-gradient(${backgroundColor}, #F87596);
             box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
           }
           `
@@ -78,7 +81,13 @@ const Input = ({
           `padding-left: 10px;
           padding-right: 10px;
           font-size: 15px;
-          input=`
+          transition-duration: 0.4s;
+
+          &:focus {
+            border-radius: 1px solid black;
+            box-shadow: 0 0 0 3px #CE6A85;
+          }
+          `
         )
         break
       default:
@@ -94,9 +103,6 @@ const Input = ({
     if (isTextType) {
       // For text inputs
       console.log(value)
-    } else {
-      console.log(value)
-      // TODO: fot buttons and checkboxes
     }
   }, [value, isTextType, inputRef])
 
@@ -112,6 +118,7 @@ const Input = ({
       inputStyles={inputStyles}
       width={width}
       height={height}
+      placeholder={placeholder}
     />
   )
 }
@@ -122,7 +129,8 @@ Input.propTypes = {
   containedValue: PropTypes.string,
   callback: PropTypes.func,
   componentWidth: PropTypes.string,
-  componentHeight: PropTypes.string
+  componentHeight: PropTypes.string,
+  placeHolder: PropTypes.string
 }
 
 export default Input
