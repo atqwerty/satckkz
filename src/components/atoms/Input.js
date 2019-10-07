@@ -38,9 +38,33 @@ const Input = ({
       case 'button':
       case 'submit':
         setIsTextType(false)
+        setInputStyles(
+          `cursor: pointer;
+          `
+        )
         break
       case 'checkbox':
         setIsTextType(false)
+        setInputStyles(
+          `cursor: pointer;
+          appearance: none;
+          background-color: #DCDCDC;
+          border: 1px solid black;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+          border-radius: 2px;
+          display: inline-block;
+          position: relative;
+
+          &:active, :checked:active {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+          }
+
+          &:checked {
+            background-color: orange;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+          }
+          `
+        )
         break
       case 'search':
       case 'text':
@@ -74,7 +98,8 @@ const Input = ({
   return (
     <InputStyled
       ref={inputRef}
-      onClick={() => callback && callback()}
+      // pass value for checkbox
+      onClick={() => callback && callback(value)}
       type={typeOf}
       value={value}
       onChange={e => setValue(e.target.value)}

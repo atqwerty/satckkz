@@ -16,8 +16,8 @@ function App() {
           bgColor='orange'
           containedValue='test'
           // callback={callback}
-          // componentWidth='100%'
-          // componentHeight='100%'
+          componentWidth='20px'
+          componentHeight='20px'
         />
       </div>
     </div>
