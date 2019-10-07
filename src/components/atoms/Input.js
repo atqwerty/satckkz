@@ -40,6 +40,11 @@ const Input = ({
         setIsTextType(false)
         setInputStyles(
           `cursor: pointer;
+          transition-duration: 0.4s;
+
+          &:hover {
+            box-shadow: inset 0 0 0 5px #167070;
+          }
           `
         )
         break

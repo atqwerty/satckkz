@@ -12,12 +12,12 @@ function App() {
     <div className='App'>
       <div style={{ width: '200px', height: '30px', position: 'absolute' }}>
         <Input
-          type='checkbox'
+          type='button'
           bgColor='orange'
           containedValue='test'
           // callback={callback}
-          componentWidth='20px'
-          componentHeight='20px'
+          componentWidth='100%'
+          componentHeight='100%'
         />
       </div>
     </div>
