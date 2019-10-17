@@ -50,6 +50,7 @@ class LoginPage extends React.Component {
                 <form name="form" className='form' onSubmit={this.handleSubmit}>
                    <div className={'form-group' + (submitted && !username ? ' has-error' : '')}> 
                      <Input
+                       style={{ marginTop: '10px' }}
                        onChange={this.handleChange}
                        value={username}
                        name='username'
@@ -66,11 +67,12 @@ class LoginPage extends React.Component {
 
                    <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
                      <Input
+                       style={{ marginTop: '10px' }}
                        onChange={this.handleChange}
                        value={password}
                        name='password'
-                       placeHolder = 'password'
-                       type='text'
+                       placeHolder='password'
+                       type='password'
                        bgColor='white'
                        componentWidth='100%'
                        componentHeight='100%'
@@ -82,6 +84,7 @@ class LoginPage extends React.Component {
 
                     <div className='container flex align-center justify-content'>
                         <Input
+                          style={{ marginTop: '10px' }}
                           type='submit'
                           bgColor='orange'
                           containedValue='login'

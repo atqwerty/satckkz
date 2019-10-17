@@ -8,6 +8,7 @@ import { PrivateRoute } from './_components';
 import { HomePage } from './HomePage';
 import { LoginPage } from './LoginPage';
 import { RegisterPage } from './RegisterPage';
+import Header from './components/molecules/Header/Header'
 
 class App extends React.Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class App extends React.Component {
         const { alert } = this.props;
         return (
             <div className="jumbotron">
+                <Header/>
                 <div className="container">
                     <div className="col-sm-8 col-sm-offset-2">
                         {alert.message &&
