@@ -1,26 +1,85 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Input from './components/atoms/Input/Input'
 
 function App() {
+
+  const callback = (value = '') => {
+    alert('callback answer ' + value)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div style={{ width: '200px', height: '30px', position: 'relative', marginTop: '20px', marginLeft: '20px' }}>
+        <label>Button:</label>
+        <Input
+          type='button'
+          bgColor='orange'
+          containedValue='button'
+          callback={callback}
+          componentWidth='100%'
+          componentHeight='100%'
+        />
+      </div>
+      <div style={{ width: '200px', height: '30px', position: 'relative', marginTop: '20px', marginLeft: '20px' }}>
+        <label>Submit:</label>
+        <Input
+          type='submit'
+          bgColor='orange'
+          containedValue='submit'
+          callback={callback}
+          componentWidth='100%'
+          componentHeight='100%'
+        />
+      </div>
+      <div style={{ width: '200px', height: '30px', position: 'relative', marginTop: '30px', marginLeft: '20px' }}>
+        <label>Text:</label>
+        <Input
+          type='text'
+          bgColor='orange'
+          componentWidth='100%'
+          componentHeight='100%'
+        />
+      </div>
+      <div style={{ width: '200px', height: '30px', position: 'relative', marginTop: '30px', marginLeft: '20px' }}>
+        <label>Search (maybe redo a little):</label>
+        <Input
+          type='search'
+          bgColor='orange'
+          componentWidth='100%'
+          componentHeight='100%'
+          placeHolder='Search...'
+        />
+      </div>
+      <div style={{ width: '200px', height: '30px', position: 'relative', marginTop: '30px', marginLeft: '20px' }}>
+        <label>Checkbox:</label>
+        <Input
+          type='checkbox'
+          bgColor='orange'
+          containedValue='test'
+          callback={callback}
+          componentWidth='20px'
+          componentHeight='20px'
+        />
+        <Input
+          type='checkbox'
+          bgColor='orange'
+          containedValue='test'
+          callback={callback}
+          componentWidth='20px'
+          componentHeight='20px'
+        />
+        <Input
+          type='checkbox'
+          bgColor='orange'
+          containedValue='test'
+          callback={callback}
+          componentWidth='20px'
+          componentHeight='20px'
+        />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
