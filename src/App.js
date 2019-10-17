@@ -13,13 +13,25 @@ function App() {
   return (
     <div className='App'>
       <Router>
-        <LinkWrapper
-          to='/'
-          text='link'
-          textColor='#000000'
-          isGovno={true}
-          width='50px'
-        />
+        <div style={{ width: '200px', height: '30px', position: 'relative', marginTop: '20px', marginLeft: '20px' }}>
+          <label>Normal Link:</label>
+          <LinkWrapper
+            to='/'
+            text='normal link'
+            textColor='#000000'
+            isDecorated={false}
+          />
+        </div>
+        <div style={{ width: '200px', height: '30px', position: 'relative', marginTop: '20px', marginLeft: '20px' }}>
+          <label>Decorated Link:</label>
+          <LinkWrapper
+            to='/'
+            text='decorated link'
+            textColor='#000000'
+            onHoverColor='lightgrey'
+            isDecorated={true}
+          />
+        </div>
       </Router>
       <div style={{ width: '200px', height: '30px', position: 'relative', marginTop: '20px', marginLeft: '20px' }}>
         <label>Button:</label>
