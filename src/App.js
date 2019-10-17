@@ -1,6 +1,8 @@
 import React from 'react'
 import './App.css'
 import Input from './components/atoms/Input/Input'
+import LinkWrapper from './components/atoms/Link/Link'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
 
@@ -10,6 +12,15 @@ function App() {
 
   return (
     <div className='App'>
+      <Router>
+        <LinkWrapper
+          to='/'
+          text='link'
+          textColor='#000000'
+          isGovno={true}
+          width='50px'
+        />
+      </Router>
       <div style={{ width: '200px', height: '30px', position: 'relative', marginTop: '20px', marginLeft: '20px' }}>
         <label>Button:</label>
         <Input
