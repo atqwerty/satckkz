@@ -6,6 +6,7 @@ function getStylesFromDecorated (isDecorated, color) {
   if (isDecorated) {
     return `
       padding: 5px;
+      box-sizing: border-box;
       border-radius: 15px;
       transition: 0.5s ease all;
       &:hover {
@@ -33,6 +34,7 @@ const LinkWrapper = ({
   textColor,
   width,
   height,
+  children,
   ...props
 }) => {
   const [linkText] = useState(text)
@@ -51,7 +53,7 @@ const LinkWrapper = ({
       isDecorated={linkIsDecorated}
     >
       <Link {...props}>
-        {linkText}
+        {children}
       </Link>
     </LinkStyled>
   )
