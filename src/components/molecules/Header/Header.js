@@ -6,13 +6,13 @@ const StyledHeader = styled.div`
   margin: 0;
   width: 100%;
   height: 100px;
-  background-color: gray;
+  background-color: palevioletred;
   display: grid;
-  grid-template-columns: 10% 20% 40% 20% 10%;
+  grid-template-columns: 20% 10% 40% 10% 10% 10%;
 
   & > div {
     align-self: center;
-    // justify-self: center;
+    text-align: center;
   }
 `
 
@@ -25,8 +25,8 @@ const Header = (props) => {
 
   return (
     <StyledHeader>
+      <div className='header-part'><h1>Stackkz</h1></div>
       <div className='header-part' />
-      <div className='header-part'><h1 style={{ textAlign: 'center' }}>Stackkz</h1></div>
       <div className='header-part'>
         <Input
           onChange={handleChange}
@@ -39,8 +39,25 @@ const Header = (props) => {
           componentHeight='100%'
         />
       </div>
-      <div className='header-part'>asdf</div>
-      <div className='header-part'>asdf</div>
+      <div className='header-part' />
+      <div className='header-part'>
+        <Input
+          value='Login'
+          type='button'
+          bgColor='palevioletred'
+          componentWidth='80%'
+          componentHeight='100%'
+        />
+      </div>
+      <div className='header-part'>
+        <Input
+          value='Register'
+          type='button'
+          bgColor='#69C7B5'
+          componentWidth='80%'
+          componentHeight='100%'
+        />
+      </div>
     </StyledHeader>
   )
 }

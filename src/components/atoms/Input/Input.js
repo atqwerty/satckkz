@@ -47,12 +47,12 @@ const Input = ({
           padding: 1rem;
           font-size: 1rem; 
           color: white;
-          border: 1px solid indianred;
-          background-color: indianred;
+          border: 1px solid ${backgroundColor || 'indianred'};
+          background-color: ${backgroundColor || 'indianred'};
           &:hover {
             background-color: white;
-            border: 1px solid indianred;
-            color: indianred;
+            border: 1px solid ${backgroundColor || 'indianred'};
+            color: ${backgroundColor || 'indianred'};
           }
           `
         )

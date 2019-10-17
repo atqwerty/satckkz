@@ -86,7 +86,7 @@ class LoginPage extends React.Component {
                         <Input
                           style={{ marginTop: '10px' }}
                           type='submit'
-                          bgColor='orange'
+                          bgColor='#B7DDC8'
                           containedValue='login'
                           componentWidth='50%'
                           componentHeight='100%'
