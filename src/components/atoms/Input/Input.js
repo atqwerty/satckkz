@@ -5,10 +5,9 @@ import PropTypes from 'prop-types'
 const InputStyled = styled.input`
   border: none;
   outline: none;
-  border-radius: 5px;
+  box-sizing: border-box;
   width: ${props => props.width};
   height: ${props => props.height};
-  background-image: linear-gradient(${props => props.backgroundColor}, #F87596);
   ${props => props.inputStyles}
 `
 
@@ -42,9 +41,17 @@ const Input = ({
         setIsTextType(false)
         setInputStyles(
           `cursor: pointer;
-          transition-duration: 0.4s;
+          transition-duration: 0.2s;
+          padding: 1rem;
+          font-size: 1rem; 
+          color: white;
+          border: 1px solid indianred;
+          background-color: indianred;
+          margin-top: 10px;
           &:hover {
-            box-shadow: inset 0 0 0 3px #CE6A85;
+            background-color: white;
+            border: 1px solid indianred;
+            color: indianred;
           }
           `
         )
@@ -75,13 +82,14 @@ const Input = ({
       case 'text':
         setIsTextType(true)
         setInputStyles(
-          `padding-left: 10px;
-          padding-right: 10px;
+          `padding: 10px;
           font-size: 15px;
-          transition-duration: 0.4s;
+          margin-top: 10px;
+          border: 2px solid rgba(0,0,0,0.3);
+          transition-duration: 0.1s;
           &:focus {
-            border-radius: 1px solid black;
-            box-shadow: 0 0 0 3px #CE6A85;
+            border: 2px solid rgba(0,0,0,0.5);
+            outline: none;
           }
           `
         )
@@ -115,6 +123,7 @@ const Input = ({
       width={width}
       height={height}
       placeholder={placeholder}
+      {...props}
     />
   )
 }
