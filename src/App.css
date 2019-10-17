@@ -20,3 +20,7 @@
 .App-link {
   color: #09d3ac;
 }
+
+/* Redo if needed */
+input[type="search"]::-webkit-search-cancel-button { display: none; }
+
