@@ -55,6 +55,7 @@ class RegisterPage extends React.Component {
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className={'form-group' + (submitted && !user.firstName ? ' has-error' : '')}> 
                       <Input
+                        style={{ marginTop: '10px' }}
                         onChange={this.handleChange}
                         value={user.firstName}
                         name='firstName'
@@ -70,6 +71,7 @@ class RegisterPage extends React.Component {
                     </div>
                     <div className={'form-group' + (submitted && !user.lastName ? ' has-error' : '')}> 
                       <Input
+                        style={{ marginTop: '10px' }}
                         onChange={this.handleChange}
                         value={user.lastName}
                         name='lastName'
@@ -85,6 +87,7 @@ class RegisterPage extends React.Component {
                     </div>
                     <div className={'form-group' + (submitted && !user.username ? ' has-error' : '')}> 
                       <Input
+                        style={{ marginTop: '10px' }}
                         onChange={this.handleChange}
                         value={user.username}
                         name='username'
@@ -100,6 +103,7 @@ class RegisterPage extends React.Component {
                     </div>
                     <div className={'form-group' + (submitted && !user.password ? ' has-error' : '')}> 
                       <Input
+                        style={{ marginTop: '10px' }}
                         onChange={this.handleChange}
                         value={user.password}
                         name='password'
@@ -115,8 +119,9 @@ class RegisterPage extends React.Component {
                     </div>
                     <div className='container flex align-center justify-content'>
                         <Input
+                          style={{ marginTop: '10px' }}
                           type='submit'
-                          bgColor='orange'
+                          bgColor='#B7DDC8'
                           containedValue='Register'
                           componentWidth='50%'
                           componentHeight='100%'
