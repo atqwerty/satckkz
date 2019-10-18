@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: indigo; */
+  background-color: #EDB7C9;
 }
 
 code {
@@ -15,6 +15,8 @@ code {
 
 .form-wrapper {
   /* background-color: indigo; */
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
 
 .header-part {
