@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Input from '../../atoms/Input/Input'
 
+import { useSelector } from 'react-redux'
+
 const StyledHeader = styled.div`
   margin: 0;
   width: 100%;
@@ -16,8 +18,9 @@ const StyledHeader = styled.div`
   }
 `
 
-const Header = (props) => {
+const Header = ({ loginCallback, registerCallback, props }) => {
   const [value, setValue] = useState('')
+  const store = useSelector(store => store)
 
   const handleChange = e => {
     setValue(e.target.value)
@@ -40,26 +43,42 @@ const Header = (props) => {
         />
       </div>
       <div className='header-part' />
-      <div className='header-part'>
-        <Input
-          value='Login'
-          type='button'
-          bgColor='palevioletred'
-          componentWidth='80%'
-          componentHeight='100%'
-        />
-      </div>
-      <div className='header-part'>
-        <Input
-          value='Register'
-          type='button'
-          bgColor='#69C7B5'
-          componentWidth='80%'
-          componentHeight='100%'
-        />
-      </div>
+      {store.authentication.loggedIn
+        ? <div className='header-part'><p>hi {store.authentication.user.username}</p></div>
+        : <div className='header-part'>
+          <Input
+            value='Login'
+            type='button'
+            callback={loginCallback}
+            bgColor='palevioletred'
+            componentWidth='80%'
+            componentHeight='100%'
+          />
+        </div>}
+      {!store.authentication.loggedIn &&
+        <div className='header-part'>
+          <Input
+            value='Register'
+            type='button'
+            bgColor='#69C7B5'
+            callback={registerCallback}
+            componentWidth='80%'
+            componentHeight='100%'
+          />
+        </div>}
     </StyledHeader>
   )
 }
+
+// function mapState(state) {
+//   const { users, authentication } = state;
+//   const { user } = authentication;
+//   return { user, users };
+// }
+
+// const actionCreators = {
+//   getUsers: userActions.getAll,
+//   deleteUser: userActions.delete
+// }
 
 export default Header

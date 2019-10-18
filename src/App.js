@@ -20,11 +20,22 @@ class App extends React.Component {
         });
     }
 
+    loginRedirect() {
+        history.push('/login');
+    }
+
+    registerRedirect() {
+        history.push('register')
+    }
+
     render() {
         const { alert } = this.props;
         return (
             <div className="jumbotron">
-                <Header/>
+                <Header
+                    loginCallback={this.loginRedirect}
+                    registerCallback={this.registerRedirect}
+                />
                 <div className="container">
                     <div className="col-sm-8 col-sm-offset-2">
                         {alert.message &&
