@@ -31,6 +31,8 @@ const Input = ({
   const [inputStyles, setInputStyles] = useState('')
   const [isTextType, setIsTextType] = useState(false)
 
+  console.log(typeOf)
+
   /**
    * Applies styles and minor changes for component
    */
@@ -45,13 +47,12 @@ const Input = ({
           padding: 1rem;
           font-size: 1rem; 
           color: white;
-          border: 1px solid indianred;
-          background-color: indianred;
-          margin-top: 10px;
+          border: 1px solid ${backgroundColor || 'indianred'};
+          background-color: ${backgroundColor || 'indianred'};
           &:hover {
             background-color: white;
-            border: 1px solid indianred;
-            color: indianred;
+            border: 1px solid ${backgroundColor || 'indianred'};
+            color: ${backgroundColor || 'indianred'};
           }
           `
         )
@@ -80,11 +81,11 @@ const Input = ({
         break
       case 'search':
       case 'text':
+      case 'password':
         setIsTextType(true)
         setInputStyles(
           `padding: 10px;
           font-size: 15px;
-          margin-top: 10px;
           border: 2px solid rgba(0,0,0,0.3);
           transition-duration: 0.1s;
           &:focus {
@@ -129,7 +130,7 @@ const Input = ({
 }
 
 Input.propTypes = {
-  type: PropTypes.oneOf(['button', 'checkbox', 'search', 'submit', 'text']).isRequired,
+  type: PropTypes.oneOf(['button', 'checkbox', 'search', 'submit', 'text', 'password']).isRequired,
   bgColor: PropTypes.string,
   containedValue: PropTypes.string,
   callback: PropTypes.func,

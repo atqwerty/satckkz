@@ -8,6 +8,7 @@ import { PrivateRoute } from './_components';
 import { HomePage } from './HomePage';
 import { LoginPage } from './LoginPage';
 import { RegisterPage } from './RegisterPage';
+import Header from './components/molecules/Header/Header'
 
 class App extends React.Component {
     constructor(props) {
@@ -19,10 +20,22 @@ class App extends React.Component {
         });
     }
 
+    loginRedirect() {
+        history.push('/login');
+    }
+
+    registerRedirect() {
+        history.push('register')
+    }
+
     render() {
         const { alert } = this.props;
         return (
             <div className="jumbotron">
+                <Header
+                    loginCallback={this.loginRedirect}
+                    registerCallback={this.registerRedirect}
+                />
                 <div className="container">
                     <div className="col-sm-8 col-sm-offset-2">
                         {alert.message &&
