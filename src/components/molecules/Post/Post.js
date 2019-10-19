@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const PostStyled = styled.div`
-  margin-top: 10px;
-  width: 100%;
+  margin-left: 25%;
+  margin-top: 100px;
+  width: 50%;
   min-height 100px;
   border-radius: 15px;
   background-color: white;
@@ -12,7 +13,9 @@ const PostStyled = styled.div`
 const Post = ({ children, props }) => {
   return (
     <PostStyled>
-      {children}
+      <h1 style={{ textAlign: 'center' }}>
+        {children}
+      </h1>
     </PostStyled>
   )
 }

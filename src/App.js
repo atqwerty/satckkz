@@ -10,7 +10,6 @@ import { HomePage } from './HomePage';
 import { LoginPage } from './LoginPage';
 import { RegisterPage } from './RegisterPage';
 import Header from './components/molecules/Header/Header'
-import Post from './components/molecules/Post/Post';
 
 class App extends React.Component {
     constructor(props) {
