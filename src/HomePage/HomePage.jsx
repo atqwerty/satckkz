@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Post from '../components/molecules/Post/Post'
 
 import { userActions } from '../_actions';
 
@@ -39,6 +40,7 @@ class HomePage extends React.Component {
                 <p>
                     <Link to="/login">Logout</Link>
                 </p>
+                <Post />
             </div>
         );
     }
