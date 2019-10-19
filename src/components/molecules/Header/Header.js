@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Input from '../../atoms/Input/Input'
 import LinkWrapper from '../../atoms/Link/Link'
+import { Link } from 'react-router-dom'
 
 import { useSelector } from 'react-redux'
 
@@ -29,7 +30,8 @@ const Header = ({ loginCallback, registerCallback, props }) => {
 
   return (
     <StyledHeader>
-      <div className='header-part'><h1>Stackkz</h1></div>
+      {/* <div className='header-part'><h1>Stackkz</h1></div> */}
+      <div className='header-part'><Link style={{ textDecoration:'none', color: 'white' }} to='/'><h1>Stackkz</h1></Link></div>
       <div className='header-part' />
       <div className='header-part'>
         <Input

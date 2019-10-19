@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Post from '../components/molecules/Post/Post'
 
 import { userActions } from '../_actions';
+import LinkWrapper from '../components/atoms/Link/Link';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -32,7 +33,8 @@ class HomePage extends React.Component {
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
                 <ul style={{ width: '50%', listStyleType: 'none' }}>
                     {this.state.data.map((something, index) =>
-                        <Post key={index}>{something}</Post>
+                      <li><LinkWrapper to={'/post-detail/'+index}>{something}</LinkWrapper></li>
+                        // <Post key={index}>{something}</Post>
                     )}
                 </ul>
                 {/* <p> */}
