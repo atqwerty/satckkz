@@ -10,7 +10,7 @@ class HomePage extends React.Component {
         super(props)
 
         this.state = {
-            data: ['a', 'b', 'c']
+            data: ['very', 'second', 'another']
         }
     }
 
@@ -28,12 +28,20 @@ class HomePage extends React.Component {
             <div className="col-md-6 col-md-offset-3">
                 <h1>Hi {user.firstName}!</h1>
                 <p>You're logged in with React!!</p>
-                <h3>All registered users:</h3>
+                <h3>Posts:</h3>
                 {users.loading && <em>Loading users...</em>}
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
                 <ul style={{ width: '50%', listStyleType: 'none' }}>
                     {this.state.data.map((something, index) =>
-                      <li><LinkWrapper to={'/post-detail/'+index}>{something}</LinkWrapper></li>
+                      <li style={{ borderRadius: '15px', padding: '20px', boxShadow: '4px 4px 8px 0 #DB7093', background: 'white', margin: '10px' }}>
+                        <LinkWrapper
+                            to={'/post-detail/'+index}
+                            isDecorated={true}
+                            onHoverColor={'#99D8CD'}
+                        >
+                            {something}
+                        </LinkWrapper>
+                      </li>
                         // <Post key={index}>{something}</Post>
                     )}
                 </ul>
