@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Post from '../components/molecules/Post/Post'
 
 import { userActions } from '../_actions';
 import LinkWrapper from '../components/atoms/Link/Link';
@@ -33,7 +32,7 @@ class HomePage extends React.Component {
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
                 <ul style={{ marginLeft: '25%', width: '50%', listStyleType: 'none' }}>
                     {this.state.data.map((something, index) =>
-                      <li style={{ borderRadius: '15px', padding: '20px', boxShadow: '4px 4px 8px 0 #DB7093', background: 'white', margin: '10px' }}>
+                      <li key={index} style={{ borderRadius: '15px', padding: '20px', boxShadow: '4px 4px 8px 0 #DB7093', background: 'white', margin: '10px' }}>
                         <LinkWrapper
                             to={'/post-detail/'+index}
                             isDecorated={true}

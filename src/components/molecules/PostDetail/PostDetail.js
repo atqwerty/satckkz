@@ -14,7 +14,7 @@ export default function PostDetail(props){
   }
 
   let initialPost = getPosts(props.match.params.id);
-  const [post, setPost] = useState(initialPost);
+  const [post] = useState(initialPost);
   return (
     <div>
       <Post>{post.content}</Post>

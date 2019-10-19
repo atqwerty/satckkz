@@ -31,8 +31,6 @@ const Input = ({
   const [inputStyles, setInputStyles] = useState('')
   const [isTextType, setIsTextType] = useState(false)
 
-  console.log(typeOf)
-
   /**
    * Applies styles and minor changes for component
    */
