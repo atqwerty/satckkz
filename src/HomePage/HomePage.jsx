@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Post from '../components/molecules/Post/Post'
 
@@ -24,23 +23,16 @@ class HomePage extends React.Component {
                 {users.loading && <em>Loading users...</em>}
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
                 {users.items &&
-                    <ul>
+                    <ul style={{ width: '50%', listStyleType: 'none' }}>
                         {users.items.map((user, index) =>
-                            <li key={user.id}>
-                                {user.firstName + ' ' + user.lastName}
-                                {
-                                    user.deleting ? <em> - Deleting...</em>
-                                    : user.deleteError ? <span className="text-danger"> - ERROR: {user.deleteError}</span>
-                                    : <span> - <a onClick={this.handleDeleteUser(user.id)}>Delete</a></span>
-                                }
-                            </li>
+                            <Post key={index}/>
                         )}
                     </ul>
                 }
-                <p>
-                    <Link to="/login">Logout</Link>
-                </p>
-                <Post />
+                {/* <p> */}
+                    {/* <Link to="/login">Logout</Link> */}
+                {/* </p> */}
+                {/* <Post /> */}
             </div>
         );
     }
