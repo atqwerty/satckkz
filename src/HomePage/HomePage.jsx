@@ -5,6 +5,14 @@ import Post from '../components/molecules/Post/Post'
 import { userActions } from '../_actions';
 
 class HomePage extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            data: ['a', 'b', 'c']
+        }
+    }
+
     componentDidMount() {
         this.props.getUsers();
     }
@@ -22,13 +30,11 @@ class HomePage extends React.Component {
                 <h3>All registered users:</h3>
                 {users.loading && <em>Loading users...</em>}
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
-                {users.items &&
-                    <ul style={{ width: '50%', listStyleType: 'none' }}>
-                        {users.items.map((user, index) =>
-                            <Post key={index}/>
-                        )}
-                    </ul>
-                }
+                <ul style={{ width: '50%', listStyleType: 'none' }}>
+                    {this.state.data.map((something, index) =>
+                        <Post key={index}>{something}</Post>
+                    )}
+                </ul>
                 {/* <p> */}
                     {/* <Link to="/login">Logout</Link> */}
                 {/* </p> */}
