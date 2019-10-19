@@ -25,13 +25,13 @@ class HomePage extends React.Component {
     render() {
         const { user, users } = this.props;
         return (
-            <div className="col-md-6 col-md-offset-3">
+            <div style={{ textAlign: 'center' }}>
                 <h1>Hi {user.firstName}!</h1>
                 <p>You're logged in with React!!</p>
                 <h3>Posts:</h3>
                 {users.loading && <em>Loading users...</em>}
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
-                <ul style={{ width: '50%', listStyleType: 'none' }}>
+                <ul style={{ marginLeft: '25%', width: '50%', listStyleType: 'none' }}>
                     {this.state.data.map((something, index) =>
                       <li style={{ borderRadius: '15px', padding: '20px', boxShadow: '4px 4px 8px 0 #DB7093', background: 'white', margin: '10px' }}>
                         <LinkWrapper
