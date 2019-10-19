@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Input from '../../atoms/Input/Input'
+import LinkWrapper from '../../atoms/Link/Link'
+import { Link } from 'react-router-dom'
 
 import { useSelector } from 'react-redux'
 
@@ -28,7 +30,8 @@ const Header = ({ loginCallback, registerCallback, props }) => {
 
   return (
     <StyledHeader>
-      <div className='header-part'><h1>Stackkz</h1></div>
+      {/* <div className='header-part'><h1>Stackkz</h1></div> */}
+      <div className='header-part'><Link style={{ textDecoration:'none', color: 'white' }} to='/'><h1>Stackkz</h1></Link></div>
       <div className='header-part' />
       <div className='header-part'>
         <Input
@@ -44,7 +47,9 @@ const Header = ({ loginCallback, registerCallback, props }) => {
       </div>
       <div className='header-part' />
       {store.authentication.loggedIn
-        ? <div className='header-part'><p>hi {store.authentication.user.username}</p></div>
+        ? <div className='header-part'>
+          <p>hi {store.authentication.user.username}</p>
+        </div>
         : <div className='header-part'>
           <Input
             value='Login'
@@ -55,8 +60,9 @@ const Header = ({ loginCallback, registerCallback, props }) => {
             componentHeight='100%'
           />
         </div>}
-      {!store.authentication.loggedIn &&
-        <div className='header-part'>
+      {store.authentication.loggedIn
+        ? <LinkWrapper to='/login'>Logout</LinkWrapper>
+        : <div className='header-part'>
           <Input
             value='Register'
             type='button'

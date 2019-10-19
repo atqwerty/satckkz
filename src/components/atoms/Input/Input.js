@@ -31,8 +31,6 @@ const Input = ({
   const [inputStyles, setInputStyles] = useState('')
   const [isTextType, setIsTextType] = useState(false)
 
-  console.log(typeOf)
-
   /**
    * Applies styles and minor changes for component
    */
@@ -98,7 +96,7 @@ const Input = ({
       default:
         break
     }
-  }, [typeOf, isTextType])
+  }, [typeOf, isTextType, backgroundColor])
 
   /**
    * Used only for input type text and search

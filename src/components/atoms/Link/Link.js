@@ -37,7 +37,6 @@ const LinkWrapper = ({
   children,
   ...props
 }) => {
-  const [linkText] = useState(text)
   const [linkIsDecorated] = useState(isDecorated)
   const [linkOnHoverColor] = useState(onHoverColor)
   const [linkTextColor] = useState(textColor)

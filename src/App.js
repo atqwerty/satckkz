@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PostDetail from './components/molecules/PostDetail/PostDetail';
 
 import { history } from './_helpers';
 import { alertActions } from './_actions';
@@ -32,25 +33,27 @@ class App extends React.Component {
         const { alert } = this.props;
         return (
             <div className="jumbotron">
-                <Header
-                    loginCallback={this.loginRedirect}
-                    registerCallback={this.registerRedirect}
-                />
-                <div className="container">
-                    <div className="col-sm-8 col-sm-offset-2">
-                        {alert.message &&
-                            <div className={`alert ${alert.type}`}>{alert.message}</div>
-                        }
-                        <Router history={history}>
-                            <Switch>
-                                <PrivateRoute exact path="/" component={HomePage} />
-                                <Route path="/login" component={LoginPage} />
-                                <Route path="/register" component={RegisterPage} />
-                                <Redirect from="*" to="/" />
-                            </Switch>
-                        </Router>
+                <Router history={history}>
+                    <Header
+                        loginCallback={this.loginRedirect}
+                        registerCallback={this.registerRedirect}
+                    />
+                    <div className="container">
+                        <div className="col-sm-8 col-sm-offset-2">
+                            {alert.message &&
+                                <div className={`alert ${alert.type}`}>{alert.message}</div>
+                            }
+                            
+                                <Switch>
+                                    <PrivateRoute exact path="/" component={HomePage} />
+                                    <Route path="/login" component={LoginPage} />
+                                    <Route path="/register" component={RegisterPage} />
+                                    <Route path="/post-detail/:id" component={PostDetail} />
+                                    <Redirect from="*" to="/" />
+                                </Switch>
+                        </div>
                     </div>
-                </div>
+                </Router>
             </div>
         );
     }
